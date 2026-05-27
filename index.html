@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h1>Baraa Jamos</h1>
+            <p>Welcome to my portfolio! I am a beginner developer.I enjoy creating innovative solutions and learning new technologies.</p>
+        </section>
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project_container">
+                <div class="project_card">
+                    <h3>Calculator App</h3>
+                    <p>A simple calculator application built with HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="project_card">
+                    <h3>Weather App</h3>
+                    <p>A weather forecasting app that uses an API to display current weather conditions.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="customer_name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="customer_email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="customer_message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
