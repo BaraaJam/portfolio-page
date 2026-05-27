@@ -27,24 +27,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 4px;                    
+    margin-top: 20px;  
+    min-height: 70px; 
+    padding: 0 15px;
+    flex-wrap: wrap; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.navbar.scrolled {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);               
     -webkit-backdrop-filter: blur(10px); 
     border: 1px solid rgb(245, 246, 249);    
-    border-radius: 4px;                    
     box-shadow: rgba(51, 51, 51, 0.05) 0px 10px 20px 5px; 
-    position: sticky;
-    margin-top: 20px;
-    z-index: 1000;     
-    height: 70px; 
-    padding: 0 15px;
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 30px;
-
+    gap: 20px;
+    padding: 0px 20px; 
+    flex-wrap: wrap; 
 }
 
 .navbar a {
@@ -57,6 +63,12 @@
 .navbar a:hover {
     font-weight: bold;
     color: #15243C; 
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 h1, h2, h3, h4, h5, h6 {
