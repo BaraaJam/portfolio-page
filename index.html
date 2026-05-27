@@ -3,51 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Baraa Jamos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="dist/favicon.png" type="image/png">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav class="navbar">
+                <a href="home" class="logo-link">
+                    <img src="dist/logo.png" alt="Baraa Jamos Logo" class="nav_logo">
+                </a>
+                <ul>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <section id="about">
-            <h1>Baraa Jamos</h1>
-            <p>Welcome to my portfolio! I am a beginner developer.I enjoy creating innovative solutions and learning new technologies.</p>
-        </section>
-        <section id="projects">
-            <h2>My Projects</h2>
-            <div class="project_container">
-                <div class="project_card">
-                    <h3>Calculator App</h3>
-                    <p>A simple calculator application built with HTML, CSS, and JavaScript.</p>
+        <div class="container">
+            <section id="about">
+                <img src="dist/my_image.png" alt="Baraa Jamos" class="profile_image">
+                <h1>Baraa Jamos</h1>
+                <p>Welcome to my portfolio! I am a beginner developer. I enjoy creating innovative solutions and learning new technologies.</p>
+            </section>
+            <section id="projects">
+                <h2>My Projects</h2>
+                <div class="projects_container">
+                    <div class="project_card">
+                        <h3>Calculator App</h3>
+                        <p>A simple calculator application built with HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <div class="project_card">
+                        <h3>Weather App</h3>
+                        <p>A weather forecasting app that uses an API to display current weather conditions.</p>
+                    </div>
                 </div>
-                <div class="project_card">
-                    <h3>Weather App</h3>
-                    <p>A weather forecasting app that uses an API to display current weather conditions.</p>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <form>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="customer_name" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="customer_email" required>
-                <label for="message">Message</label>
-                <textarea id="message" name="customer_message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
+            </section>
+            <section id="why-me">
+                <h2>Why me?</h2>
+                <p>I am a passionate and dedicated developer with a strong foundation in web technologies. My experience includes building responsive websites and applications, solving complex problems, and working collaboratively in team environments.</p>
+            </section>
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="customer_name" placeholder="Your Name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="customer_email" placeholder="Your Email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="customer_message" placeholder="Your Message" required></textarea>
+                    <button type="submit" id="button"><strong>Send</strong></button>
+                </form>
+            </section>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    <div class="second_container">
+        <div class="footer-left">
+        <img src="dist/lexicon.png" alt="Lexicon Logo" class="lexicon_logo">
+        </div>
+        <div class="footer-center">
+        <p class="footer-copy">© 2026 Baraa Jamos. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+        <p class="footer-design">Designed and built with ❤️</p>
+        </div>
+    </div>
     </footer>
 </body>
 </html>
