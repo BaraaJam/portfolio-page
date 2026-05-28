@@ -16,11 +16,115 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-color: #f0f4f8;
+    --text-color: #333333;
+    --accent-color: #15243C;
+    --card-bg: #ffffff;
+    --card-border: #e5e7eb;
+    --card-hover: #f0f4f8;
+    --navbar-bg-scrolled: rgba(255, 255, 255, 0.8);
+    --footer-bg: rgba(255, 255, 255, 0.8);
+    --white: #ffffff;
+    --dark: #000000;
+    --border-color: rgb(245, 246, 249);
+    --shadow-color: rgba(51, 51, 51, 0.05);
+}
+
+body.dark {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --accent-color: #6c9bcf;
+    --card-bg: #16213e;
+    --card-border: #0f3460;
+    --card-hover: #1a1a40;
+    --navbar-bg-scrolled: rgba(26, 26, 46, 0.85);
+    --footer-bg: rgba(26, 26, 46, 0.85);
+    --white: #1a1a2e;
+    --dark: #ffffff;
+    --border-color: #0f3460;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 26px;
+    transition: background-color 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7px;
+    font-size: 12px;
+}
+
+.slider::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.icon-moon, .icon-sun {
+    z-index: 1;
+    line-height: 1;
+}
+
+.icon-moon {
+    color: #15243C;
+}
+
+.icon-sun {
+    color: #f5c542;
+}
+
+.theme-switch input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+.theme-switch input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
 .nav_logo {
     height: 100%;
     max-height: 50px;
     width: auto;
     object-fit: contain; 
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+body.dark .nav_logo {
+    filter: brightness(0) invert(1);
 }
 
 .navbar {
@@ -32,17 +136,17 @@
     min-height: 70px; 
     padding: 0 15px;
     flex-wrap: wrap; 
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.6s ease, box-shadow 0.6s ease, border-color 0.6s ease;
     background-color: transparent;
     border: 1px solid transparent;
 }
 
 .navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--navbar-bg-scrolled);
     backdrop-filter: blur(10px);               
     -webkit-backdrop-filter: blur(10px); 
-    border: 1px solid rgb(245, 246, 249);    
-    box-shadow: rgba(51, 51, 51, 0.05) 0px 10px 20px 5px; 
+    border: 1px solid var(--border-color);    
+    box-shadow: var(--shadow-color) 0px 10px 20px 5px; 
 }
 
 .navbar ul {
@@ -56,13 +160,14 @@
 .navbar a {
     font-family: 'Head Font', serif;
     text-decoration: none; 
-    color: #000000; 
+    color: var(--dark); 
     font-size: 18px;
+    transition: color 0.6s ease;
 }
 
 .navbar a:hover {
     font-weight: bold;
-    color: #15243C; 
+    color: var(--accent-color); 
 }
 
 header {
@@ -73,12 +178,15 @@ header {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Head Font', serif;
+    color: var(--dark);
+    transition: color 0.6s ease;
 }
 
 p {
     font-family: 'Disc Font', sans-serif;
-    color: #333333;
+    color: var(--text-color);
     font-size: 18px;
+    transition: color 0.6s ease;
 }
 
 .profile_image {
@@ -87,8 +195,9 @@ p {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 5px solid #ffffff;
+    border: 5px solid var(--white);
     border-radius: 50%;
+    transition: border-color 0.6s ease;
 }
 
 #about {
@@ -110,7 +219,7 @@ p {
     transform: translateX(-50%);
     width: 50px;
     height: 2px;
-    background-color: #15243C;
+    background-color: var(--accent-color);
 }
 
 #about p{
@@ -143,18 +252,19 @@ p {
 }
 
 .project_card {
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 4px;
     padding: 34px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.6s ease, border-color 0.6s ease;
 }
 
 .project_card:hover {
-    background-color: #f0f4f8;
+    background-color: var(--card-hover);
 }
 
 html, body {
@@ -166,7 +276,8 @@ html, body {
 
 body {
     font-family: 'Disc Font', sans-serif;
-    background-color: #f0f4f8; 
+    transition: background-color 0.6s ease;
+    background-color: var(--bg-color);
     background-image: linear-gradient(
         rgba(255, 255, 255, 0.45), 
         rgba(255, 255, 255, 0.45)
@@ -179,6 +290,12 @@ body {
     min-height: 100vh; 
 }
 
+body.dark {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+    ), url('dist/background.webp');
+}
 
 main {
      flex: 1 0 auto;
@@ -221,31 +338,33 @@ main {
 }
 
 form {
-    color: #ffffff;
+    color: var(--card-bg);
     font-family: 'Head Font', sans-serif;
     font-size: 18px;
     display: flex;
     margin: 0 auto;
     flex-direction: column;
     max-width: 400px;
-    background-color: #15243C;
-    border: 1px solid #e5e7eb;
+    background-color: var(--accent-color);
+    border: 1px solid var(--card-border);
     border-radius: 4px;
     padding: 24px;
     gap: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.6s ease, border-color 0.6s ease, color 0.6s ease;
 }
 
 #contact input, #contact textarea {
     padding: 10px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--card-border);
     border-radius: 4px;
     font-size: 16px;
     font-family: 'Disc Font', sans-serif;
+    transition: border-color 0.6s ease;
 }
 
 #contact input:focus, #contact textarea:focus {
-    outline-color: #15243C;
+    outline-color: var(--accent-color);
 }
 
 #contact textarea {
@@ -256,9 +375,9 @@ form {
 button {
     font-family: 'Disc Font', sans-serif;
     padding: 10px;
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     font-size: 15px;
-    color: #15243C;
+    color: var(--accent-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -266,18 +385,19 @@ button {
 }
 
 button:hover {
-    background-color: #f0f4f8;
+    background-color: var(--card-hover);
 }
 
 footer {
   padding: 20px 0;
-  background-color: rgba(255,255,255,0.8);
+  background-color: var(--footer-bg);
   backdrop-filter: blur(10px);
-  border-top: 1px solid rgb(245,246,249);
-  box-shadow: rgba(51,51,51,0.05) 0px -10px 20px 5px;
+  border-top: 1px solid var(--border-color);
+  box-shadow: var(--shadow-color) 0px -10px 20px 5px;
   width: 95%;
   max-width: 1100px;
   margin: 0 auto;
+  transition: background-color 0.6s ease, border-color 0.6s ease;
 }
 
 .second_container {

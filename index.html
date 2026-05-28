@@ -11,9 +11,18 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="home" class="logo-link">
-                    <img src="dist/logo.png" alt="Baraa Jamos Logo" class="nav_logo">
-                </a>
+                <div class="navbar-left">
+                    <a href="#" class="logo-link">
+                        <img src="dist/logo.png" alt="Baraa Jamos Logo" class="nav_logo">
+                    </a>
+                    <label class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider">
+                            <span class="icon-sun">&#9728;</span>
+                            <span class="icon-moon">&#9790;</span>
+                        </span>
+                    </label>
+                </div>
                 <ul>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#about">About</a></li>
@@ -63,13 +72,15 @@
     <footer>
     <div class="second_container">
         <div class="footer-left">
-        <img src="dist/lexicon.png" alt="Lexicon Logo" class="lexicon_logo">
+            <a href="https://lexicon.se" target="_blank" rel="noopener noreferrer">
+                <img src="dist/lexicon.png" alt="Lexicon Logo" class="lexicon_logo">
+            </a>
         </div>
         <div class="footer-center">
-        <p class="footer-copy">© 2026 Baraa Jamos. All rights reserved.</p>
+            <p class="footer-copy">© 2026 Baraa Jamos. All rights reserved.</p>
         </div>
         <div class="footer-right">
-        <p class="footer-design">Designed and built with ❤️</p>
+            <p class="footer-design">Designed and built with ❤️</p>
         </div>
     </div>
     </footer>
